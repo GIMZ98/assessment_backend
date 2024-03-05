@@ -38,26 +38,26 @@ class Answer(models.Model):
 
 # Category
 class Category(models.Model):
-    id = models.CharField(max_length=16, primary_key=True)
+    id = models.CharField(max_length=1, primary_key=True)
     name = models.CharField(max_length=100)
 
 # Correct Answer
 class CorrectAnswer(models.Model):
-    id = models.CharField(max_length=16, primary_key=True)
+    id = models.CharField(max_length=1, primary_key=True)
     answer = models.CharField(max_length=100)
 
 # Summary
 class Summary(models.Model):
     school_id = models.ForeignKey("School", to_field="id", on_delete=models.PROTECT, null=True)
-    sydney_participant = models.CharField(max_length=20)
-    sydney_percentile = models.CharField(max_length=20)
+    sydney_participant = models.IntegerField()
+    sydney_percentile = models.IntegerField()
     assessment_area_id = models.ForeignKey("AssessmentArea", to_field="id", on_delete=models.PROTECT, null=True)
     award_id = models.ForeignKey("Award", to_field="id", on_delete=models.PROTECT, null=True)
     class_id = models.ForeignKey("Class", to_field="id", on_delete=models.PROTECT, null=True)
     correct_answer_percentage_per_class = models.IntegerField()
     correct_answer = models.CharField(max_length=100)
     student_id = models.ForeignKey("Student", to_field="id", on_delete=models.PROTECT, null=True)
-    participant = models.CharField(max_length=50)
+    participant = models.IntegerField()
     student_score = models.IntegerField()
     subject_id = models.ForeignKey("Subject", to_field="id", on_delete=models.PROTECT, null=True)
     category_id = models.ForeignKey("Category", to_field="id", on_delete=models.PROTECT, null=True)

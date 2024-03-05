@@ -12,6 +12,8 @@
 }
 </style>
 <body style="margin-left:100px">
+
+
     <h1>Table Structure</h1>
     {% for model, fields in models.items %}
     <table border="1">
@@ -24,5 +26,250 @@
     </table>
     <br />
     {% endfor %}
-</body>
-</html>
+
+    {% comment %} school {% endcomment %}
+    <h3>School Table</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+ 
+        {% for item in school_table %}
+        <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <br>
+
+    {% comment %} assessment_area {% endcomment %}
+    <h3>Assessment Area Table</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+ 
+
+        {% for item in assessment_area_table %}
+        <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <br>
+
+    {% comment %} awards {% endcomment %}
+    <h3>Awards Table</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+ 
+
+        {% for item in awards_table %}
+        <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <br>
+
+    {% comment %} class {% endcomment %}
+    <h3>Class Table</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+ 
+
+        {% for item in class_table %}
+        <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <br>
+
+    {% comment %} student {% endcomment %}
+    <h3>Student Table</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+ 
+
+        {% for item in student_table %}
+        <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.fullName }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <br>
+
+    {% comment %} subject {% endcomment %}
+    <h3>Subject Table</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Subject</th>
+                <th>Subject Score</th>
+            </tr>
+        </thead>
+ 
+
+        {% for item in subject_table %}
+        <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.subject }}</td>
+                <td>{{ item.subject_score }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <br>
+
+    {% comment %} answer {% endcomment %}
+    <h3>Answer Table</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Answer</th>
+        </thead>
+ 
+
+        {% for item in answer_table %}
+        <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.answer }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <br>
+
+    {% comment %} category {% endcomment %}
+    <h3>Category Table</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+        </thead>
+ 
+
+        {% for item in category_table %}
+        <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <br>
+
+    {% comment %} correct answer {% endcomment %}
+    <h3>Correct Answer Table</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Answer</th>
+        </thead>
+ 
+
+        {% for item in correct_answer_table %}
+        <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.answer }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <br>
+
+    {% comment %} summary {% endcomment %}
+    <h3>Summary Table</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>School Id</th>
+                <th>Sydney Participant</th>
+                <th>Sydney Percentile</th>
+                <th>Assessment Area Id</th>
+                <th>Award Id</th>
+                <th>Class Id</th>
+                <th>Correct Answer Percentage</th>
+                <th>Correct Answer</th>
+                <th>Student Id</th>
+                <th>Participant</th>
+                <th>Student Score</th>
+                <th>Subject Id</th>
+                <th>Category Id</th>
+                <th>Year Level</th>
+                <th>Answer Id</th>
+                <th>Correct Answer Id</th>
+        </thead>
+ 
+
+        {% for item in summary_table %}
+        <tbody>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.school_id.id }}</td>
+                <td>{{ item.sydney_participant }}</td>
+                <td>{{ item.sydney_percentile }}</td>
+                <td>{{ item.assessment_area_id.id }}</td>
+                <td>{{ item.award_id.id }}</td>
+                <td>{{ item.class_id.id }}</td>
+                <td>{{ item.correct_answer_percentage_per_class }}</td>
+                <td>{{ item.correct_answer }}</td>
+                <td>{{ item.student_id.id }}</td>
+                <td>{{ item.participant }}</td>
+                <td>{{ item.student_score }}</td>
+                <td>{{ item.subject_id.id }}</td>
+                <td>{{ item.category_id.id }}</td>
+                <td>{{ item.year_level_name }}</td>
+                <td>{{ item.answer_id.id }}</td>
+                <td>{{ item.correct_answer_id.id }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <br>
